@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/xamaailogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/xamaailogo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Xaamaai">
+
+        <!-- Activity que realmente existe -->
+        <activity
+            android:name=".BrevetelaActivity2"
+            android:exported="false" />
+
+        <!-- Provider (mantido conforme seu código) -->
+        <provider
+            android:authorities="com.example.xaamaai"
+            android:exported="true"
+            tools:ignore="MissingClass"
+            android:name="android.content.SearchRecentSuggestionsProvider">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.app.slice.category.SLICE" />
+                <data
+                    android:host="xaamaai.example.com"
+                    android:pathPrefix="/"
+                    android:scheme="http" />
+            </intent-filter>
+        </provider>
+
+        <!-- Activity de cadastro -->
+        <activity
+            android:name=".CadastroActivity2"
+            android:exported="false" />
+
+        <!-- Activity principal que abre ao iniciar o app -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
