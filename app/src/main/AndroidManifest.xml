@@ -17,21 +17,11 @@
             android:name=".BrevetelaActivity2"
             android:exported="false" />
 
-        <!-- Provider (mantido conforme seu código) -->
+        <!-- Provider de sugestões de busca -->
         <provider
-            android:authorities="com.example.xaamaai"
-            android:exported="true"
-            tools:ignore="MissingClass"
-            android:name="android.content.SearchRecentSuggestionsProvider">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.app.slice.category.SLICE" />
-                <data
-                    android:host="xaamaai.example.com"
-                    android:pathPrefix="/"
-                    android:scheme="http" />
-            </intent-filter>
-        </provider>
+            android:name=".MySuggestionProvider"
+            android:authorities="com.example.xaamaai.MySuggestionProvider"
+            android:exported="true" />
 
         <!-- Activity de cadastro -->
         <activity
